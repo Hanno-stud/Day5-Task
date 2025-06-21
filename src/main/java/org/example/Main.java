@@ -81,7 +81,8 @@ class EmployeeService {
                 }
 
                 // Auto-detect numeric fields from prompt text
-                if (prompt.toLowerCase().matches(".*(page|number|salary|count|limit).*") && !input.matches("\\d+")) {
+                if (prompt.toLowerCase().matches(".*(page|number|salary|count|limit).*") && !input.matches("(\\d{1,3}(,\\d{3})*|\\d+|^\\s*-\\s*$)")
+                ) {
                     System.out.println("Only numeric input allowed here. Please try again.");
                     continue;
                 }
